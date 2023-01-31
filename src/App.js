@@ -1,8 +1,17 @@
 import { useState, useEffect } from "react";
 
 function Hello() {
+  //sol1.
+  useEffect(function () {
+    console.log("hi");
+    return function () {
+      console.log("bye");
+    };
+  }, []);
+  //sol2.
   useEffect(() => {
-    console.log("im here!");
+    console.log("hi");
+    return () => console.log("bye");
   }, []);
   return <h1>Hello</h1>;
 }
